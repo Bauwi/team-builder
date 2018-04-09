@@ -20,8 +20,8 @@ npm start
 
 ## Built With
 
-* [React](https://reactjs.org/) - The web framework used
-* [Redux](https://redux.js.org/) - State container
+* [React](https://reactjs.org/)
+* [Redux](https://redux.js.org/)
 
 ## Contributing
 
