@@ -17,8 +17,6 @@ const SelectedTeamComp = styled.div`
   margin: 1rem 0 0 0;
   padding: 0.5rem;
 
-  min-height: 5vh;
-
   p {
     margin: 0;
   }

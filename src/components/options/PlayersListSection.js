@@ -3,15 +3,9 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 
 import formatName from "../../utils/formatName";
+import formatPosition from "../../utils/formatPosition";
 
 import { addPlayerToBuildingTeam, unselectSlot } from "./../../actions/team";
-
-const formatPosition = position =>
-  position
-    .split(/[-\s]/g)
-    .map(word => word[0])
-    .join("")
-    .toUpperCase();
 
 const PlayersListSectionComp = styled.div`
   border-right: 1px solid #0f2d00;

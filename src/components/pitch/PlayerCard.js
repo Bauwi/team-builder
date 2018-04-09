@@ -25,6 +25,8 @@ const PlayerCardComp = styled.div`
   min-height: ${props => (props.isSelected ? "30vw" : "3vw")};
   max-height: ${props => (props.isSelected ? "30vw" : "3vw")};
 
+  opacity: 0.8;
+
   z-index: ${props => (props.isSelected ? "99" : "auto")};
 
   transition: all 0.2s ease;
@@ -39,7 +41,7 @@ const PlayerCardComp = styled.div`
   .bubble-toggler {
     align-items: center;
     display: flex;
-    background: rgba(255, 255, 255, 0.5);
+    background: ${props => (props.isFull ? "#134e5e" : "rgba(255,255,255,.5)")};
     border: ${props =>
       props.isSelected ? "5px solid white" : "2px solid white"};
     border-radius: 50%;
@@ -84,9 +86,6 @@ const PlayerCardComp = styled.div`
     outline: none;
     text-align: center;
 
-    &:hover {
-      background: #134e5e;
-    }
     z-index: ${props => (props.isSelected ? "99" : "auto")};
   }
 
@@ -97,12 +96,14 @@ const PlayerCardComp = styled.div`
   }
 
   .bubble-content {
-    display: ${props => !props.isSelected && "none"};
+    opacity: ${props => (!props.isSelected ? "0" : "1")};
     position: relative;
     top: 0;
     left: 0;
     height: 0;
     width: 0;
+
+    transition: opacity 2s ease;
   }
 `;
 

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
+import moment from "moment";
 
 import formatName from "../../utils/formatName";
 
@@ -22,17 +23,16 @@ const PlayerCardContentComp = styled.div`
   max-width: ${props => (props.isSelected ? "30vw" : "0")};
   min-width: ${props => (props.isSelected ? "30vw" : "0")};
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
-  transition: height 2s ease;
   section {
     align-items: center;
     color: white;
     display: flex;
     justify-content: center;
     min-height: 15vw;
-    width: 100%;
+    width: ${props => (props.isSelected ? "100%" : "0")};
   }
   .player-card-bottom {
-    display: flex;
+    display: ${props => (props.isSelected ? "flex" : "none")};
     flex-direction: column;
     justify-content: center;
     p {
@@ -43,7 +43,7 @@ const PlayerCardContentComp = styled.div`
     }
   }
   .player-card-top {
-    display: flex;
+    display: ${props => (props.isSelected ? "flex" : "none")};
     align-items: center;
     flex-direction: column;
     justify-content: center;
@@ -95,7 +95,11 @@ export class PlayerCardContent extends Component {
 
           <section className="player-card-bottom">
             <p>{position}</p>
-            <p>{dateOfBirth}</p>
+            <p>
+              {moment(dateOfBirth)
+                .fromNow()
+                .replace("ago", "old")}
+            </p>
             <p>{nationality}</p>
           </section>
         </PlayerCardContentComp>

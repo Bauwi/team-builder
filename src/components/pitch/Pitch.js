@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 
 import PitchLine from "./PitchLine";
+import Coach from "./Coach";
 
 import JSONFormations from "../../utils/formations.json";
 
@@ -15,7 +16,7 @@ const PitchWrapper = styled.section`
   justify-content: center;
   height: 90vh;
   max-width: 50%;
-  margin: 5vh 1rem 1rem 1rem;
+  margin: 5vh 1rem 1rem 3rem;
   padding: 3rem;
   @media (max-width: 700px) {
     height: 50vh;
@@ -42,6 +43,7 @@ export class Pitch extends Component {
     return (
       <PitchWrapper id="pitch">
         <PitchComp>{this.renderFormation(this.props.formation)}</PitchComp>
+        <Coach />
       </PitchWrapper>
     );
   }

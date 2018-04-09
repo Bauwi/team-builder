@@ -5,7 +5,10 @@
   "dependencies": {
     "antd": "^3.3.3",
     "axios": "^0.18.0",
+    "downloadjs": "^1.4.7",
+    "html2canvas": "^1.0.0-alpha.12",
     "lodash": "^4.17.5",
+    "moment": "^2.22.0",
     "normalize.css": "^8.0.0",
     "react": "^16.3.0",
     "react-dnd": "^2.6.0",

@@ -1,67 +1,66 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import styled from "styled-components";
+import html2canvas from "html2canvas";
+import downloadjs from "downloadjs";
 
-const ScreenshotComp = styled.div`
-  align-content: center;
-  border: ${props => (props.isOpen ? "20px solid white" : "2px solid white")};
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: fixed;
-  bottom: ${props => (props.isOpen ? "-200px" : "25px")};
-  right: ${props => (props.isOpen ? "-200px" : "25px")};
-
-  background: rgba(255, 255, 255, 0.3);
+const ScreenshotComp = styled.button`
+  background: transparent;
+  border: 5px solid white;
   border-radius: 50%;
-  width: ${props => (props.isOpen ? "500px" : "50px")};
-  height: ${props => (props.isOpen ? "500px" : "50px")};
-  transition: all 0.5s ease;
+  cursor: pointer;
+  outline: none;
+  position: fixed;
+  bottom: 25px;
+  right: 40px;
+  height: 70px;
+  width: 70px;
 
-  button:first-child {
-    position: fixed;
-    bottom: ${props => (props.isOpen ? "5px" : "25px")};
-    right: ${props => (props.isOpen ? "5px" : "25px")};
-    background: rgba(255, 255, 255, 0.3);
-    border: ${props => (props.isOpen ? "20px solid white" : "2px solid white")};
-    border-radius: 50%;
-    height: ${props => (props.isOpen ? "90px" : "50px")};
-    width: ${props => (props.isOpen ? "90px" : "50px")};
-    transition: border 0.5s ease;
-    z-index: 99;
-  }
+  transition: background 0.5s ease;
 
   img {
-    margin: auto;
-    height: 50%;
-    width: 50%;
+    width: 80%;
   }
 
-  .screenshot-content {
-    opacity: 0;
-
+  &:hover {
+    background: rgba(0, 0, 0, 0.5);
+  }
 `;
 
-export default class Screenshot extends Component {
-  state = {
-    open: false
+export class Screenshot extends Component {
+  state = { animation: "" };
+  handleClick = () => {
+    this.setState(() => ({ animation: "clicked" }));
+    setTimeout(() => {
+      this.setState(() => ({ animation: "" }));
+    }, 600);
+
+    const fileName =
+      this.props.teamName.replace(/ /g, "_") || "Line_me_up_dream_team";
+    const pitchHTML = document.querySelector("#pitch");
+
+    html2canvas(pitchHTML, {
+      backgroundColor: "#134e5e"
+    }).then(pitchCanvas => {
+      const pngURI = pitchCanvas.toDataURL("image/png;base64");
+      downloadjs(pngURI, fileName);
+    });
   };
 
   render() {
-    console.log(this.state.open);
     return (
-      <ScreenshotComp isOpen={this.state.open}>
-        <button
-          onClick={() =>
-            this.setState(prevState => ({ open: !prevState.open }))
-          }
-        >
-          <img src="camera.svg" alt="camera" />
-        </button>
-        <div className="screenshot-content">
-          <h2>Get a snapshot</h2>
-          <button>CHeez !</button>
-        </div>
+      <ScreenshotComp
+        onClick={this.handleClick}
+        className={this.state.animation}
+      >
+        <img src="camera.svg" alt="take a screenshot !" />
       </ScreenshotComp>
     );
   }
 }
+
+const mapStateToProps = state => ({
+  teamName: state.team.currentTeam.name
+});
+
+export default connect(mapStateToProps)(Screenshot);

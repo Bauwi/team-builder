@@ -7,9 +7,7 @@ import { selectFormation } from "./../../actions/team";
 
 const Option = Select.Option;
 
-const FormationPickerComp = styled.div`
-  top: 0;
-`;
+const FormationPickerComp = styled.div``;
 
 export class FormationPicker extends Component {
   handleChange = formation => {

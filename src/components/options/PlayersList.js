@@ -42,7 +42,8 @@ export class PlayersList extends Component {
 }
 
 const mapStateToProps = state => ({
-  currentTeam: sortPlayers(state.team.currentTeam, state.team.buildingTeam)
+  currentTeam: sortPlayers(state.team.currentTeam, state.team.buildingTeam),
+  initialFetching: state.team.loadings.initialFetching
 });
 
 export default connect(mapStateToProps)(PlayersList);

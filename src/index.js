@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import AppRouter from "./router/AppRouter";
 import configureStore from "./store/configureStore";
 
-import LoadingPage from "./components/LoadingPage";
+import Loader from "./components/Loader";
 
 import "normalize.css";
 import "./App.css";
@@ -27,5 +27,5 @@ const renderApp = () => {
   }
 };
 
-ReactDOM.render(<LoadingPage />, document.getElementById("root"));
+ReactDOM.render(<Loader />, document.getElementById("root"));
 renderApp();

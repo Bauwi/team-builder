@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import Pitch from "./pitch/Pitch";
 import Options from "./options/Options";
+import Screenshot from "./Screenshot";
 
 const Main = styled.div`
   display: flex;
@@ -19,6 +20,7 @@ export default class HomePage extends Component {
         <Main>
           <Options />
           <Pitch />
+          <Screenshot />
         </Main>
       </div>
     );

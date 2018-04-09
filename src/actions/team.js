@@ -8,7 +8,6 @@ const initialFetchingIsLoading = bool => ({
 export const initialFetching = () => async dispatch => {
   dispatch(initialFetchingIsLoading(true));
   await dispatch(startSetDivision("455"));
-  await dispatch(startSetTeam("86", "Real Madrid CF"));
   dispatch(initialFetchingIsLoading(false));
 };
 

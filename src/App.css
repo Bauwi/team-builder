@@ -1,10 +1,6 @@
 @import "~antd/dist/antd.css";
 body {
-  background: linear-gradient(
-    to right,
-    #134e5e,
-    #71b280
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, #134e5e, #71b280);
 }
 html {
   overflow: hidden;
@@ -46,4 +42,29 @@ html {
   border: none;
   color: white;
   text-align: right;
+}
+
+.clicked {
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-name: button-active;
+  animation-duration: 0.2s;
+}
+@keyframes button-active {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0;
+    transform: scale(3);
+  }
+  51% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
