@@ -14,6 +14,10 @@ git clone git@github.com:Bauwi/team-builder.git
 npm install
 ```
 
+```
+npm start
+```
+
 ## Built With
 
 * [React](https://reactjs.org/) - The web framework used
