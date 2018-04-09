@@ -1,0 +1,76 @@
+{
+  "fourThreeThree": [
+    { "id": "433_1", "slots": ["slot0"], "justifyContent": "center" },
+    {
+      "id": "433_2",
+      "slots": ["slot1", "slot2"],
+      "justifyContent": "space-around"
+    },
+    {
+      "id": "433_3",
+      "slots": ["slot4", "slot5"],
+      "justifyContent": "center"
+    },
+    { "id": "433_4", "slots": ["slot3"], "justifyContent": "center" },
+    {
+      "id": "433_5",
+      "slots": ["slot6", "slot7", "slot8", "slot9"],
+      "justifyContent": "center"
+    },
+    { "id": "433_6", "slots": ["slot10"], "justifyContent": "center" }
+  ],
+  "fourFourTwo": [
+    {
+      "id": "442_1",
+      "slots": ["slot0", "slot1"],
+      "justifyContent": "center"
+    },
+    {
+      "id": "442_2",
+      "slots": ["slot2", "slot3"],
+      "justifyContent": "space-between"
+    },
+    {
+      "id": "442_3",
+      "slots": ["slot4", "slot5"],
+      "justifyContent": "center"
+    },
+    {
+      "id": "442_4",
+      "slots": ["slot6", "slot7", "slot8", "slot9"],
+      "justifyContent": "center"
+    },
+    {
+      "id": "442_5",
+      "slots": ["slot10"],
+      "justifyContent": "center"
+    }
+  ],
+  "fourTwoThreeOne": [
+    {
+      "id": "4231_1",
+      "slots": ["slot0"],
+      "justifyContent": "center"
+    },
+    {
+      "id": "4231_2",
+      "slots": ["slot1", "slot2", "slot3"],
+      "justifyContent": "center"
+    },
+    {
+      "id": "4231_3",
+      "slots": ["slot4", "slot5"],
+      "justifyContent": "center"
+    },
+    {
+      "id": "4231_4",
+      "slots": ["slot6", "slot7", "slot8", "slot9"],
+      "justifyContent": "center"
+    },
+    {
+      "id": "4231_5",
+      "slots": ["slot10"],
+      "justifyContent": "center"
+    }
+  ]
+}
