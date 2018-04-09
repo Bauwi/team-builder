@@ -1,14 +1,10 @@
-# Project Title
-
-Football Line-up builder
+# Football Line-up builder
 
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-
 ### Installing
-
 
 ```
 git clone git@github.com:Bauwi/team-builder.git
@@ -17,8 +13,6 @@ git clone git@github.com:Bauwi/team-builder.git
 ```
 npm install
 ```
-
-
 
 ## Built With
 
@@ -29,10 +23,6 @@ npm install
 
 no need for contributions.
 
-## Versioning
-
-
-
 ## Authors
 
 Bauwi
@@ -40,5 +30,3 @@ Bauwi
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-
