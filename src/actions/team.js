@@ -16,7 +16,7 @@ const setDivision = teams => ({
 });
 
 export const startSetDivision = divisionId => async dispatch => {
-  const url = `http://api.football-data.org/v1/competitions/${divisionId}/teams`;
+  const url = `https://api.football-data.org/v1/competitions/${divisionId}/teams`;
   const req = await axios.get(url, {
     headers: { "X-Auth-Token": "33efc18b62d6436281bfa54f600ab4c8" }
   });
@@ -42,7 +42,7 @@ const setTeamIsFetching = bool => ({
 export const startSetTeam = (teamId, teamName) => async dispatch => {
   dispatch(setTeamIsFetching(true));
   try {
-    const url = `http://api.football-data.org//v1/teams/${teamId}/players`;
+    const url = `https://api.football-data.org//v1/teams/${teamId}/players`;
     const req = await axios.get(url, {
       headers: { "X-Auth-Token": "33efc18b62d6436281bfa54f600ab4c8" }
     });
