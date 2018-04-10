@@ -24,7 +24,6 @@
     "source-map-explorer": "^1.5.0",
     "styled-components": "^3.2.3"
   },
-  "proxy": "http://localhost:3001",
   "scripts": {
     "analyze": "source-map-explorer build/static/js/main.*",
     "start": "react-scripts start",
