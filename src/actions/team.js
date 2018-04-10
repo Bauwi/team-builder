@@ -1,5 +1,4 @@
 import axios from "axios";
-import API_KEY from "../keys/api_keys";
 const initialFetchingIsLoading = bool => ({
   type: "INITIAL_FETCHING_IS_LOADING",
   bool
