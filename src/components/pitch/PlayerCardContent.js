@@ -57,6 +57,11 @@ const PlayerCardContentComp = styled.div`
       margin: 0;
     }
   }
+  .player-card-top--empty {
+    padding-left: 1rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
 `;
 
 export class PlayerCardContent extends Component {
@@ -69,8 +74,13 @@ export class PlayerCardContent extends Component {
     if (!this.props.player) {
       return (
         <PlayerCardContentContainer isFull={this.props.isFull}>
-          <PlayerCardContentComp isSelected={this.props.isSelected}>
-            <section className="player-card-top">Pick a player !</section>
+          <PlayerCardContentComp
+            isSelected={this.props.isSelected}
+            style={{ paddingLeft: "4vw" }}
+          >
+            <section className="player-card-top player-card-top--empty">
+              Pick a player !
+            </section>
 
             <section className="player-card-bottom">
               <img src="arrow.svg" alt="arrow" />
