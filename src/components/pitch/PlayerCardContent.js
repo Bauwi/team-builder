@@ -3,9 +3,6 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 import moment from "moment";
 
-import formatName from "../../utils/formatName";
-
-import Closer from "./../Closer";
 const PlayerCardContentContainer = styled.div`
   position: relative;
   top: -1vw;
@@ -91,7 +88,6 @@ export class PlayerCardContent extends Component {
 
     const { name, jerseyNumber, position, dateOfBirth, nationality } =
       this.props.player && this.props.player;
-    const simplifiedName = name.split(" ");
 
     return (
       <PlayerCardContentContainer>

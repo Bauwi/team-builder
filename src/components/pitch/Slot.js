@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
 
-import PlayerCardContent from "./PlayerCardContent";
-import SlotPlayerSvg from "./SlotPlayerSvg";
-import { selectSlot } from "./../../actions/team";
 import PlayerCard from "./PlayerCard";
 
 import formatName from "./../../utils/formatName";

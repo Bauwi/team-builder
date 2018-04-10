@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
-import { Select, Modal, Button } from "antd";
+import { Select } from "antd";
 
 import { selectFormation } from "./../../actions/team";
 

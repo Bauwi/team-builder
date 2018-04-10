@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
-import { Select, Tag } from "antd";
+import { Select } from "antd";
 
 import { startSetDivision, initialFetching } from "./../../actions/team";
 

@@ -1,5 +1,4 @@
 import _ from "lodash";
-import formatName from "../utils/formatName";
 const sortPlayers = (currentTeam, buildingTeam) => {
   return currentTeam.players
     .filter(
@@ -21,6 +20,7 @@ const sortPlayers = (currentTeam, buildingTeam) => {
       ) {
         return { ...player, line: 3 };
       }
+      return null;
     })
     .sort((a, b) => {
       if (a["line"] < b["line"]) {

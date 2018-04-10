@@ -35,7 +35,7 @@ export default class Coach extends Component {
   render() {
     return (
       <CoachComp>
-        <input type="text" placeHolder="Coach" />
+        <input type="text" placeholder="Coach" />
       </CoachComp>
     );
   }
