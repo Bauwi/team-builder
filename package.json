@@ -12,8 +12,6 @@
     "moment": "^2.22.0",
     "normalize.css": "^8.0.0",
     "react": "^16.3.0",
-    "react-dnd": "^2.6.0",
-    "react-dnd-html5-backend": "^2.6.0",
     "react-dom": "^16.3.0",
     "react-redux": "^5.0.7",
     "react-router": "^4.2.0",
@@ -21,18 +19,20 @@
     "react-scripts": "1.1.1",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
-    "source-map-explorer": "^1.5.0",
     "styled-components": "^3.2.3"
   },
   "scripts": {
     "analyze": "source-map-explorer build/static/js/main.*",
     "start": "node server/server.js",
-    "build": "react-scripts build && rm build/static/js/*.map",
+    "client": "react-scripts start",
+    "server": "nodemon server/server.js",
+    "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "heroku-postbuild": "npm run build"
   },
   "devDependencies": {
-    "nodemon": "^1.17.3"
+    "nodemon": "^1.17.3",
+    "source-map-explorer": "^1.5.0"
   }
 }
