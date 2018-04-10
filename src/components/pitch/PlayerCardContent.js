@@ -70,7 +70,6 @@ export class PlayerCardContent extends Component {
   };
 
   render() {
-    console.log(this.props.isFull);
     if (!this.props.player) {
       return (
         <PlayerCardContentContainer isFull={this.props.isFull}>
@@ -92,7 +91,6 @@ export class PlayerCardContent extends Component {
 
     const { name, jerseyNumber, position, dateOfBirth, nationality } =
       this.props.player && this.props.player;
-    console.log(this.props.isSelected);
     const simplifiedName = name.split(" ");
 
     return (
