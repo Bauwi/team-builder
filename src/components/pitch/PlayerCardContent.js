@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
-import moment from "moment";
 
 const PlayerCardContentContainer = styled.div`
   position: relative;
@@ -99,11 +98,7 @@ export class PlayerCardContent extends Component {
 
           <section className="player-card-bottom">
             <p>{position}</p>
-            <p>
-              {moment(dateOfBirth)
-                .fromNow()
-                .replace("ago", "old")}
-            </p>
+            <p>{dateOfBirth}</p>
             <p>{nationality}</p>
           </section>
         </PlayerCardContentComp>

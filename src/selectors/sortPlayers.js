@@ -1,12 +1,9 @@
-import _ from "lodash";
 const sortPlayers = (currentTeam, buildingTeam) => {
+  const playersOnThePitch = Object.keys(buildingTeam.slots).map(
+    key => buildingTeam.slots[key] && buildingTeam.slots[key].name
+  );
   return currentTeam.players
-    .filter(
-      player =>
-        !_.values(buildingTeam.slots)
-          .map(slot => slot && slot.name)
-          .includes(player.name)
-    )
+    .filter(player => !playersOnThePitch.includes(player.name))
     .map(player => {
       if (player.position === "Keeper") {
         return { ...player, line: 0 };

@@ -1,15 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
-import { Select } from "antd";
 
 import { startSetDivision, initialFetching } from "./../../actions/team";
 
 import TeamPickerItem from "./TeamPickerItem";
 import FormationPicker from "./FormationPicker";
 import SelectedTeam from "./SelectedTeam";
-
-const { Option } = Select;
 
 const TeamPickerComp = styled.div`
   width: 100%;

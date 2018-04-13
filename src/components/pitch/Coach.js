@@ -35,6 +35,7 @@ export default class Coach extends Component {
   render() {
     return (
       <CoachComp>
+        <label htmlFor="coach">Coach</label>
         <input type="text" placeholder="Coach" />
       </CoachComp>
     );

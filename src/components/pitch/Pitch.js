@@ -9,7 +9,7 @@ import JSONFormations from "../../utils/formations.json";
 
 const PitchWrapper = styled.section`
   display: flex;
-  background-image: url(pitch.svg);
+  background-image: url(images/pitch.svg);
   flex: 70%;
   flex-grow: 1;
   align-items: center;
