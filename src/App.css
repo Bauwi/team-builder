@@ -6,7 +6,7 @@ html {
   overflow: hidden;
 }
 
-.ant-select {
+/* .ant-select {
   padding-left: 1rem !important;
   width: auto !important;
 }
@@ -42,7 +42,7 @@ html {
   border: none;
   color: white;
   text-align: right;
-}
+} */
 
 .clicked {
   animation-timing-function: ease-in-out;

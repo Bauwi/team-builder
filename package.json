@@ -8,6 +8,7 @@
     "compression": "^1.7.2",
     "downloadjs": "^1.4.7",
     "express": "^4.16.3",
+    "express-minify": "^1.0.0",
     "html2canvas": "^1.0.0-alpha.12",
     "lodash": "^4.17.5",
     "moment": "^2.22.0",

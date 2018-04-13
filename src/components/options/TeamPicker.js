@@ -29,6 +29,10 @@ const TeamPickerInputs = styled.div`
 `;
 
 export class TeamPicker extends Component {
+  state = {
+    value: "445"
+  };
+
   componentDidMount() {
     this.props.initialFetching();
   }
@@ -47,26 +51,24 @@ export class TeamPicker extends Component {
     });
   };
 
-  handleChange = value => {
-    console.log("handleChange || ", "value: ", value);
+  handleChange = e => {
+    const { value } = e.target;
+    this.setState(() => ({ value }));
     this.props.startSetDivision(value);
   };
 
   render() {
+    console.log(this.state.value);
     return (
       <TeamPickerComp>
         <TeamPickerInputs>
-          <Select
-            defaultValue="455"
-            style={{ width: 120 }}
-            onChange={this.handleChange}
-          >
-            <Option value="445">Premier League</Option>
-            <Option value="455">La Liga</Option>
-            <Option value="452">Bundesliga</Option>
-            <Option value="456">Serie A</Option>
-            <Option value="450">Ligue 1</Option>
-          </Select>
+          <select onChange={this.handleChange} value={this.state.value}>
+            <option value="445">Premier League</option>
+            <option value="455">La Liga</option>
+            <option value="452">Bundesliga</option>
+            <option value="456">Serie A</option>
+            <option value="450">Ligue 1</option>
+          </select>
           <FormationPicker />
         </TeamPickerInputs>
 

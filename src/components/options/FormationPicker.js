@@ -1,31 +1,31 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
-import { Select } from "antd";
 
 import { selectFormation } from "./../../actions/team";
-
-const Option = Select.Option;
 
 const FormationPickerComp = styled.div``;
 
 export class FormationPicker extends Component {
-  handleChange = formation => {
-    this.props.selectFormation(formation);
+  state = {
+    value: "4-3-3"
+  };
+
+  handleChange = e => {
+    const { value } = e.target;
+    this.setState(() => ({ value }));
+    this.props.selectFormation(value);
   };
 
   render() {
+    console.log(this.state.value);
     return (
       <FormationPickerComp>
-        <Select
-          defaultValue="4-3-3"
-          style={{ width: 120 }}
-          onChange={this.handleChange}
-        >
-          <Option value="fourThreeThree">4-3-3</Option>
-          <Option value="fourFourTwo">4-4-2</Option>
-          <Option value="fourTwoThreeOne">4-2-3-1</Option>
-        </Select>
+        <select id="lang" onChange={this.handleChange} value={this.state.value}>
+          <option value="fourThreeThree">4-3-3</option>
+          <option value="fourFourTwo">4-4-2</option>
+          <option value="fourTwoThreeOne">4-2-3-1</option>
+        </select>
       </FormationPickerComp>
     );
   }

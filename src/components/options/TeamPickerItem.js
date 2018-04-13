@@ -12,19 +12,21 @@ const TeamItem = styled.li`
   justify-content: flex-end;
   flex: 60%;
   div {
+    color: white;
     width: 70% !important;
   }
 `;
 
 export class TeamPickerItem extends Component {
   handleClick = () => {
+    console.log(this.props.id);
     this.props.startSetTeam(this.props.id, this.props.name);
   };
 
   render() {
     return (
       <TeamItem>
-        <Tag onClick={this.handleClick}>{this.props.name}</Tag>
+        <div onClick={this.handleClick}>{this.props.name}</div>
       </TeamItem>
     );
   }

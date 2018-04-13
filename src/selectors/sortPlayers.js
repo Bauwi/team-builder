@@ -20,7 +20,7 @@ const sortPlayers = (currentTeam, buildingTeam) => {
       ) {
         return { ...player, line: 3 };
       }
-      return null;
+      return;
     })
     .sort((a, b) => {
       if (a["line"] < b["line"]) {
