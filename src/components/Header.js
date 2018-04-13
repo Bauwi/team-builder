@@ -19,7 +19,7 @@ export default class Header extends Component {
     return (
       <HomeHeader>
         <HomeHeaderTitle>
-          <img src="LineMeUp.svg" alt="" />
+          <img src="images/LineMeUp.svg" alt="" />
         </HomeHeaderTitle>
       </HomeHeader>
     );

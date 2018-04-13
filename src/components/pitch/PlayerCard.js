@@ -127,7 +127,7 @@ export class PlayerCard extends Component {
         <div className="bubble">
           <div className="bubble-toggler" onClick={this.togglePlayerCard}>
             {isSelected ? (
-              <img src="close.svg" alt="close" />
+              <img src="images/close.svg" alt="close" />
             ) : (
               player && (
                 <p className="bubble-toggler-number">{player.jerseyNumber}</p>
@@ -139,7 +139,7 @@ export class PlayerCard extends Component {
             className="bubble-eraser"
             onClick={this.handleRemovePlayerFromTeam}
           >
-            <img src="delete.svg" alt="erase" />
+            <img src="images/delete.svg" alt="erase" />
           </div>
 
           <div className="bubble-content">

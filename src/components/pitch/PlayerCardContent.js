@@ -79,7 +79,7 @@ export class PlayerCardContent extends Component {
             </section>
 
             <section className="player-card-bottom">
-              <img src="arrow.svg" alt="arrow" />
+              <img src="images/arrow.svg" alt="arrow" />
             </section>
           </PlayerCardContentComp>
         </PlayerCardContentContainer>

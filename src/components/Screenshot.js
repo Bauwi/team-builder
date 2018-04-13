@@ -53,7 +53,7 @@ export class Screenshot extends Component {
         onClick={this.handleClick}
         className={this.state.animation}
       >
-        <img src="camera.svg" alt="take a screenshot !" />
+        <img src="images/camera.svg" alt="take a screenshot !" />
       </ScreenshotComp>
     );
   }
