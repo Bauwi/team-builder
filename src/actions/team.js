@@ -42,13 +42,11 @@ const setTeamIsFetching = bool => ({
 
 export const startSetTeam = (teamId, teamName) => async dispatch => {
   dispatch(setTeamIsFetching(true));
-  console.log(teamId);
 
-  const url = `https://api.football-data.org//v1/teams/${teamId}/players`;
+  const url = `https://api.football-data.org/v1/teams/${teamId}/players`;
   const req = await axios.get(url, {
     headers: { "X-Auth-Token": "33efc18b62d6436281bfa54f600ab4c8" }
   });
-  console.log(req.data.players, teamName);
   return dispatch(setTeam(req.data.players, teamName));
 };
 

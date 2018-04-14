@@ -6,6 +6,11 @@ const app = express();
 const publicPath = path.join(__dirname, "..", "build");
 const port = process.env.PORT || 3001;
 
+app.use(function(req, res, next) {
+  res.setHeader("Content-Security-Policy", "script-src 'self'");
+  return next();
+});
+
 app.use(compression());
 app.use(minify());
 app.use(express.static(publicPath));

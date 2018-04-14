@@ -55,7 +55,6 @@ export class TeamPicker extends Component {
   };
 
   render() {
-    console.log(this.state.value);
     return (
       <TeamPickerComp>
         <TeamPickerInputs>

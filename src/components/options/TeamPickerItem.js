@@ -18,7 +18,6 @@ const TeamItem = styled.li`
 
 export class TeamPickerItem extends Component {
   handleClick = () => {
-    console.log(this.props.id);
     this.props.startSetTeam(this.props.id, this.props.name);
   };
 

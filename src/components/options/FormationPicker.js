@@ -18,7 +18,6 @@ export class FormationPicker extends Component {
   };
 
   render() {
-    console.log(this.state.value);
     return (
       <FormationPickerComp>
         <select id="lang" onChange={this.handleChange} value={this.state.value}>

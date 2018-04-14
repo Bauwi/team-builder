@@ -36,7 +36,7 @@ export default class Coach extends Component {
     return (
       <CoachComp>
         <label htmlFor="coach">Coach</label>
-        <input type="text" placeholder="Coach" />
+        <input id="coach" type="text" placeholder="Coach" />
       </CoachComp>
     );
   }
