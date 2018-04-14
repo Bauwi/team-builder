@@ -14,7 +14,7 @@ const PitchWrapper = styled.section`
   flex-grow: 1;
   align-items: center;
   justify-content: center;
-  height: 90vh;
+  height: 70vh;
   max-width: 50%;
   margin: 5vh 1rem 1rem 3rem;
   padding: 3rem;

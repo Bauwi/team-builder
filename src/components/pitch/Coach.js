@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
-const CoachComp = styled.form`
+const CoachComp = styled.div`
   color: white;
   font-family: Shadows Into Light;
   font-size: 14px;
