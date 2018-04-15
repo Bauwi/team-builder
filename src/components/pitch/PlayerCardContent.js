@@ -4,7 +4,6 @@ import styled from "styled-components";
 
 const PlayerCardContentContainer = styled.div`
   position: relative;
-  top: -1vw;
   left: -19vw;
 `;
 const PlayerCardContentComp = styled.div`
@@ -19,9 +18,10 @@ const PlayerCardContentComp = styled.div`
   max-width: ${props => (props.isSelected ? "30vw" : "0")};
   min-width: ${props => (props.isSelected ? "30vw" : "0")};
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+
   section {
     align-items: center;
-    color: white;
+    color: #111;
     display: flex;
     justify-content: center;
     min-height: 15vw;
@@ -44,11 +44,11 @@ const PlayerCardContentComp = styled.div`
     flex-direction: column;
     justify-content: center;
     h2 {
-      color: white;
+      color: #111;
       font-size: 1rem;
     }
     p {
-      border-bottom: 2px solid white;
+      border-bottom: 2px solid #111;
       font-size: 3rem;
       margin: 0;
     }
@@ -56,6 +56,9 @@ const PlayerCardContentComp = styled.div`
   .player-card-top--empty {
     padding-left: 1rem;
     font-size: 1rem;
+    font-weight: 900;
+    font-family: Helvetica;
+    font-style: italic;
     text-transform: uppercase;
   }
 `;
@@ -69,10 +72,7 @@ export class PlayerCardContent extends Component {
     if (!this.props.player) {
       return (
         <PlayerCardContentContainer isFull={this.props.isFull}>
-          <PlayerCardContentComp
-            isSelected={this.props.isSelected}
-            style={{ paddingLeft: "4vw" }}
-          >
+          <PlayerCardContentComp isSelected={this.props.isSelected}>
             <section className="player-card-top player-card-top--empty">
               Pick a player !
             </section>
@@ -90,7 +90,10 @@ export class PlayerCardContent extends Component {
 
     return (
       <PlayerCardContentContainer>
-        <PlayerCardContentComp isSelected={this.props.isSelected}>
+        <PlayerCardContentComp
+          isSelected={this.props.isSelected}
+          style={{ marginLeft: "-1vw" }}
+        >
           <section className="player-card-top">
             <p>{jerseyNumber}</p>
             <h2>{name.toUpperCase()}</h2>

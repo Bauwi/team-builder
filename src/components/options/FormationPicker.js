@@ -20,7 +20,11 @@ export class FormationPicker extends Component {
   render() {
     return (
       <FormationPickerComp>
-        <select id="lang" onChange={this.handleChange} value={this.state.value}>
+        <select
+          className="formation-select"
+          onChange={this.handleChange}
+          value={this.state.value}
+        >
           <option value="fourThreeThree">4-3-3</option>
           <option value="fourFourTwo">4-4-2</option>
           <option value="fourTwoThreeOne">4-2-3-1</option>

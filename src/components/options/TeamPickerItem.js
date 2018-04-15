@@ -6,13 +6,30 @@ import styled from "styled-components";
 import { startSetTeam } from "./../../actions/team";
 
 const TeamItem = styled.li`
-  border-right: 2px solid white;
+  color: white;
+  cursor: pointer;
   display: flex;
-  justify-content: flex-end;
-  flex: 60%;
-  div {
-    color: white;
-    width: 70% !important;
+  font-family: Helvetica;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 900;
+  justify-content: space-between;
+  line-height: 0.7rem;
+
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  transition: all ease 0.2s;
+  p {
+    width: 100%;
+    margin: 0.3rem 0;
+    text-align: right;
+    text-transform: uppercase;
+  }
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: lightblue;
+    transition: all ease 0.5s;
   }
 `;
 
@@ -24,7 +41,7 @@ export class TeamPickerItem extends Component {
   render() {
     return (
       <TeamItem>
-        <div onClick={this.handleClick}>{this.props.name}</div>
+        <p onClick={this.handleClick}>{this.props.name}</p>
       </TeamItem>
     );
   }

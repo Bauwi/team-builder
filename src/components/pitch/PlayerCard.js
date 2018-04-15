@@ -12,9 +12,8 @@ import {
 
 const PlayerCardComp = styled.div`
   align-items: center;
-  background: #134e5e;
-  border: ${props =>
-    props.isSelected ? "1vw solid white" : "0px solid white"};
+  background: #fff;
+  border: ${props => (props.isSelected ? "1vw solid #111" : "0px solid white")};
   border-radius: 50%;
   display: flex;
   flex-direction: column;
@@ -25,7 +24,7 @@ const PlayerCardComp = styled.div`
   min-height: ${props => (props.isSelected ? "30vw" : "3vw")};
   max-height: ${props => (props.isSelected ? "30vw" : "3vw")};
 
-  opacity: 0.8;
+  opacity: 0.9;
 
   z-index: ${props => (props.isSelected ? "99" : "auto")};
 
@@ -41,9 +40,10 @@ const PlayerCardComp = styled.div`
   .bubble-toggler {
     align-items: center;
     display: flex;
-    background: ${props => (props.isFull ? "#134e5e" : "rgba(255,255,255,.5)")};
+    background: ${props =>
+      props.isFull ? "rgba(0,0,0,.9)" : "rgba(0,0,0,.2)"};
     border: ${props =>
-      props.isSelected ? "5px solid white" : "2px solid white"};
+      props.isSelected ? "5px solid #111" : "2px solid white"};
     border-radius: 50%;
     color: #134e5e;
     cursor: pointer;
@@ -51,12 +51,14 @@ const PlayerCardComp = styled.div`
     min-height: ${props => (props.isSelected ? "4vw" : "3vw")};
     min-width: ${props => (props.isSelected ? "4vw" : "3vw")};
     text-align: center;
-    transition: border 0.2s ease, min-height 0.2s ease, min-width 0.2s ease;
+    transition: all ease 0.2s;
     outline: none;
     margin: auto 0;
 
     &:hover {
-      background: #134e5e;
+      background: #999;
+      transform: scale(1.2);
+      transition: transform 0.2s ease;
     }
     z-index: ${props => (props.isSelected ? "99" : "auto")};
 
@@ -74,7 +76,7 @@ const PlayerCardComp = styled.div`
       props.isSelected && props.isFull ? "5px solid white" : "0px solid white"};
     border-radius: 50%;
     box-sizing: content-box;
-    color: white;
+    color: #111;
     cursor: pointer;
     display: flex;
     justify-content: center;

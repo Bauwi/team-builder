@@ -40,7 +40,7 @@ export class Screenshot extends Component {
     const pitchHTML = document.querySelector("#pitch");
 
     html2canvas(pitchHTML, {
-      backgroundColor: "#134e5e"
+      backgroundColor: "#111"
     }).then(pitchCanvas => {
       const pngURI = pitchCanvas.toDataURL("image/png;base64");
       downloadjs(pngURI, fileName);

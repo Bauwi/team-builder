@@ -16,22 +16,24 @@ const PlayersListSectionComp = styled.div`
 `;
 const Player = styled.div`
   color: white;
+  cursor: pointer;
   display: flex;
-  font-family: Shadows Into Light;
+  font-family: Helvetica;
   font-size: 12px;
   font-style: italic;
   font-weight: 900;
   justify-content: space-between;
-  margin-right: 8px;
-  padding: 0 7px;
+
   width: 100%;
   min-width: 100%;
   max-width: 100%;
+  transition: all ease 0.2s;
   p {
-    margin: 0;
+    margin: 0.2rem 0;
   }
   &:hover {
     background: rgba(255, 255, 255, 0.2);
+    color: lightblue;
     cursor: pointer;
   }
 `;

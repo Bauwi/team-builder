@@ -7,17 +7,19 @@ import Closer from "./../Closer";
 import { resetCurrentTeam } from "./../../actions/team";
 
 const SelectedTeamComp = styled.div`
-  align-content: center;
-  background: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid #111;
   color: white;
   display: flex;
 
   font-family: Shadows Into Light;
-  justify-content: flex-end;
-  margin: 1rem 0 0 0;
+  justify-content: space-between;
+  margin: 0.2rem 0 0 0.2rem;
   padding: 0.5rem;
 
-  min-height: 5vh;
+  min-height: 10px;
+  transition: all ease 0.5s;
 
   p {
     margin: 0;
@@ -29,6 +31,12 @@ const SelectedTeamComp = styled.div`
     align-content: center;
     font-size: 0.7rem;
   }
+
+  &:hover {
+    border: 1px solid lightblue;
+    color: lightblue;
+    transition: all ease 0.5s;
+  }
 `;
 
 export class SelectedTeam extends Component {
@@ -39,13 +47,13 @@ export class SelectedTeam extends Component {
   render() {
     return (
       <SelectedTeamComp>
-        <p className="selected-team__name">
-          {this.props.selectedTeam.toUpperCase()}
-        </p>
         <Closer
           onClose={this.handleResetTeam}
           position={{ top: "-15px", right: "0", bottom: "0", left: "0px" }}
         />
+        <p className="selected-team__name">
+          {this.props.selectedTeam.toUpperCase()}
+        </p>
       </SelectedTeamComp>
     );
   }

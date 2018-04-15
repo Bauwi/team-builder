@@ -12,7 +12,7 @@ const PlayersListComp = styled.ul`
   flex-direction: column;
   justify-content: flex-end;
   list-style-type: none;
-  padding: 1rem;
+  padding: 0 1rem;
 `;
 
 export class PlayersList extends Component {

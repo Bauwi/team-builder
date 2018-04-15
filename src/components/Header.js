@@ -3,22 +3,37 @@ import styled from "styled-components";
 
 const HomeHeader = styled.header`
   display: flex;
-  justify-content: flex-end;
-  height: 150px;
-  min-height: 150px;
+  justify-content: center;
+  height: 120px;
+  min-height: 120px;
+
+  margin-bottom: 1rem;
 `;
 const HomeHeaderTitle = styled.div`
-  margin: 1rem;
   h1 {
-    color: white;
-    font-family: Helvetica;
-    margin-bottom: 0.5rem;
-    text-align: right;
+    border-top: 2px solid #111;
+    background: rgb(218, 218, 218);
+
+    color: #111;
+    font-family: Choplin;
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    text-align: center;
+    white-space: nowrap;
+    padding: 1rem 0 0 0;
+    margin: 1rem 0 0 0;
   }
   h2 {
-    color: white;
+    border-bottom: 2px solid #111;
+    background: rgb(218, 218, 218);
+
+    color: grey;
     font-size: 1rem;
     font-style: italic;
+    text-align: center;
+    margin: 0;
+    padding: 0 0 0.5rem 0;
   }
 `;
 
@@ -27,7 +42,7 @@ export default class Header extends Component {
     return (
       <HomeHeader>
         <HomeHeaderTitle>
-          <h1>Line Me Up</h1>
+          <h1>LINE ME UP</h1>
           <h2>Build your dream team line-up !</h2>
         </HomeHeaderTitle>
       </HomeHeader>

@@ -1,47 +1,9 @@
 body {
-  background: linear-gradient(to right, #134e5e, #71b280);
+  background: rgb(218, 218, 218);
 }
 html {
   overflow: hidden;
 }
-
-/* .ant-select {
-  padding-left: 1rem !important;
-  width: auto !important;
-}
-.ant-select-selection {
-  background: rgba(255, 255, 255, 0.2) !important;
-  border: none !important;
-  color: white;
-}
-
-.ant-select-arrow {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.ant-select-dropdown {
-  background: rgba(36, 36, 62, 0.8) !important;
-}
-
-.ant-select-dropdown-menu-item {
-  color: white;
-}
-.ant-select-dropdown-menu-item-active {
-  background: rgba(255, 255, 255, 0.8) !important;
-  color: #302b63;
-}
-.ant-select-dropdown-menu-item-selected {
-  background: rgba(255, 255, 255, 0.8) !important;
-  border: none !important;
-  color: #302b63;
-}
-
-.ant-tag {
-  background: none;
-  border: none;
-  color: white;
-  text-align: right;
-} */
 
 .clicked {
   animation-timing-function: ease-in-out;
@@ -67,3 +29,5 @@ html {
     transform: scale(1);
   }
 }
+
+/* Select */

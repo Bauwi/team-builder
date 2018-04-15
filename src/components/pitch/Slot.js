@@ -28,7 +28,7 @@ const SlotComp = styled.div`
     height: 0;
 
     p {
-      color: white;
+      color: #fff;
       font-family: Shadows Into Light;
       font-style: italic;
       font-weight: 900;

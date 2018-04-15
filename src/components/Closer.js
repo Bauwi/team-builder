@@ -1,21 +1,19 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
-const CloserContainer = styled.div`
-  position: relative;
-  width: 0;
-  height: 0;
-`;
+const CloserContainer = styled.div``;
 
 const CloserComp = styled.button`
-  background: rgba(0, 0, 0, 0.2);
+  background: none;
   border: none;
-  position: relative;
-  top: ${props => props.position.top};
-  right: ${props => props.position.right};
-  bottom: ${props => props.position.bottom};
-  left: ${props => props.position.left};
+  color: white;
+  cursor: pointer;
+
   outline: none;
+  img {
+    height: 50%;
+    width: 50%;
+  }
 `;
 
 export default class Closer extends Component {
@@ -23,7 +21,7 @@ export default class Closer extends Component {
     return (
       <CloserContainer>
         <CloserComp onClick={this.props.onClose} position={this.props.position}>
-          x
+          <img src="images/close.svg" alt="unselect-team" />
         </CloserComp>
       </CloserContainer>
     );

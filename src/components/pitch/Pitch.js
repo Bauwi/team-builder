@@ -9,14 +9,18 @@ import JSONFormations from "../../utils/formations.json";
 
 const PitchWrapper = styled.section`
   display: flex;
-  background-image: url(images/pitch.svg);
+  background-image: url(images/football-field.svg);
+  background-color: #333;
+  border: 1vh solid rgb(218, 218, 218);
+  border-radius: 10px;
+  box-shadow: -1px 17px 132px -8px rgba(0, 0, 0, 0.75);
   flex: 70%;
   flex-grow: 1;
   align-items: center;
   justify-content: center;
-  height: 70vh;
+  height: 75vh;
   max-width: 50%;
-  margin: 5vh 1rem 1rem 3rem;
+  margin: 4vh 1rem 1rem 3rem;
   padding: 3rem;
   @media (max-width: 700px) {
     height: 50vh;
