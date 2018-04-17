@@ -61,6 +61,19 @@ const PlayerCardContentComp = styled.div`
     font-style: italic;
     text-transform: uppercase;
   }
+
+  @media (max-width: 700px) {
+    .player-card-top {
+      margin-top: ${props => (!props.isFull ? "-2rem" : "0")};
+    }
+    .player-card-bottom {
+      margin: 3rem 0 0 -0.7rem;
+      transform: ${props => !props.isFull && "rotate(-90deg)"};
+    }
+    .jersey-number {
+      display: none;
+    }
+  }
 `;
 
 export class PlayerCardContent extends Component {
@@ -95,7 +108,7 @@ export class PlayerCardContent extends Component {
           style={{ marginLeft: "-1vw" }}
         >
           <section className="player-card-top">
-            <p>{jerseyNumber}</p>
+            <p className="jersey-number">{jerseyNumber}</p>
             <h2>{name.toUpperCase()}</h2>
           </section>
 

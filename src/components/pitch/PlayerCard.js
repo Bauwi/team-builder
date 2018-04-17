@@ -107,6 +107,17 @@ const PlayerCardComp = styled.div`
 
     transition: opacity 2s ease;
   }
+
+  @media (max-width: 700px) {
+    max-width: ${props => (props.isSelected ? "50vw" : "7vw")};
+    min-width: ${props => (props.isSelected ? "50vw" : "7vw")};
+    min-height: ${props => (props.isSelected ? "50vw" : "7vw")};
+    max-height: ${props => (props.isSelected ? "50vw" : "7vw")};
+    .bubble-toggler {
+      min-height: 7vw;
+      min-width: 7vw;
+    }
+  }
 `;
 
 export class PlayerCard extends Component {

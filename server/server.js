@@ -15,7 +15,6 @@ app.use(compression());
 app.use(minify());
 app.use(express.static(publicPath));
 
-console.log("helloworld");
 app.get("/", (req, res) => {
   res.sendFile(path.join(publicPath, "index.html"));
   console.log("servingindex.html");

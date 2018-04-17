@@ -18,13 +18,14 @@ const PitchWrapper = styled.section`
   flex-grow: 1;
   align-items: center;
   justify-content: center;
-  height: 75vh;
-  max-width: 50%;
-  margin: 4vh 1rem 1rem 3rem;
+  max-width: 40%;
+  margin: 7vh 3rem 1rem 1rem;
   padding: 3rem;
   @media (max-width: 700px) {
-    height: 50vh;
+    flex: 1;
     max-width: 100%;
+    margin: 0;
+    height: 80%;
   }
 `;
 

@@ -8,6 +8,7 @@ import Screenshot from "./Screenshot";
 const Main = styled.div`
   display: flex;
   justify-content: center;
+  height: 100vh;
   @media (max-width: 700px) {
     flex-direction: column-reverse;
   }
@@ -18,8 +19,9 @@ export default class HomePage extends Component {
     return (
       <div>
         <Main>
-          <Options />
           <Pitch />
+          <Options />
+
           <Screenshot />
         </Main>
       </div>

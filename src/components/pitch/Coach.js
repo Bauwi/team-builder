@@ -7,7 +7,7 @@ const CoachComp = styled.div`
   font-size: 14px;
   position: relative;
   top: -40vh;
-  left: -50vw;
+  left: -40vw;
   width: 0;
   height: 0;
 

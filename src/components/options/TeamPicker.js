@@ -2,22 +2,28 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
 
-import { startSetDivision, initialFetching } from "./../../actions/team";
+import PlayersList from "./PlayersList";
+
+import {
+  startSetDivision,
+  selectFormation,
+  initialFetching
+} from "./../../actions/team";
 
 import TeamPickerItem from "./TeamPickerItem";
-import FormationPicker from "./FormationPicker";
 import SelectedTeam from "./SelectedTeam";
 
 const TeamPickerComp = styled.div`
   width: 100%;
 `;
 
-const TeamList = styled.ul`
+const Pickers = styled.ul`
   display: flex;
+  flex-direction: column;
   list-style-type: none;
-  flex-wrap: wrap;
   margin: 0;
-  padding: 1rem;
+  padding: 1rem 0;
+  height: 64.5vh;
 `;
 
 const TeamPickerInputs = styled.div`
@@ -62,7 +68,8 @@ const TeamPickerInputs = styled.div`
 
 export class TeamPicker extends Component {
   state = {
-    value: "445"
+    divisionValue: "445",
+    formationValue: ""
   };
 
   componentDidMount() {
@@ -83,10 +90,15 @@ export class TeamPicker extends Component {
     });
   };
 
-  handleChange = e => {
-    const { value } = e.target;
-    this.setState(() => ({ value }));
-    this.props.startSetDivision(value);
+  handleChangeDivision = e => {
+    const divisionValue = e.target.value;
+    this.setState(() => ({ divisionValue }));
+    this.props.startSetDivision(divisionValue);
+  };
+  handleChangeFormation = e => {
+    const formationValue = e.target.value;
+    this.setState(() => ({ formationValue }));
+    this.props.selectFormation(formationValue);
   };
 
   render() {
@@ -95,7 +107,7 @@ export class TeamPicker extends Component {
         <TeamPickerInputs>
           <select
             className="division-select"
-            onChange={this.handleChange}
+            onChange={this.handleChangeDivision}
             value={this.state.value}
           >
             <option value="445">Premier League</option>
@@ -104,18 +116,31 @@ export class TeamPicker extends Component {
             <option value="456">Serie A</option>
             <option value="450">Ligue 1</option>
           </select>
-          <FormationPicker />
+          <div>
+            <select
+              className="formation-select"
+              onChange={this.handleChangeFormation}
+              value={this.state.value}
+            >
+              <option value="fourThreeThree">4-3-3</option>
+              <option value="fourFourTwo">4-4-2</option>
+              <option value="fourTwoThreeOne">4-2-3-1</option>
+            </select>
+          </div>
         </TeamPickerInputs>
 
         {this.props.currentTeamName ? (
-          <SelectedTeam
-            selectedTeam={this.props.currentTeamName}
-            onClose={this.handleResetTeam}
-          >
-            {this.props.currentTeamName}
-          </SelectedTeam>
+          <div>
+            <SelectedTeam
+              selectedTeam={this.props.currentTeamName}
+              onClose={this.handleResetTeam}
+            >
+              {this.props.currentTeamName}
+            </SelectedTeam>
+            <PlayersList />
+          </div>
         ) : (
-          <TeamList>{this.renderTeams()}</TeamList>
+          <Pickers>{this.renderTeams()}</Pickers>
         )}
       </TeamPickerComp>
     );
@@ -128,6 +153,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   startSetDivision: divisionId => dispatch(startSetDivision(divisionId)),
+  selectFormation: formation => dispatch(selectFormation(formation)),
   initialFetching: () => dispatch(initialFetching())
 });
 

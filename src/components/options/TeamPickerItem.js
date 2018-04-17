@@ -23,7 +23,6 @@ const TeamItem = styled.li`
   p {
     width: 100%;
     margin: 0.3rem 0;
-    text-align: right;
     text-transform: uppercase;
   }
   &:hover {

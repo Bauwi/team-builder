@@ -37,6 +37,13 @@ const SlotComp = styled.div`
       white-space: nowrap;
     }
   }
+  @media (max-width: 700px) {
+    .slot-player-name {
+      p {
+        font-size: 0.7rem;
+      }
+    }
+  }
 `;
 
 export class Slot extends Component {

@@ -25,6 +25,12 @@ const ScreenshotComp = styled.button`
   &:hover {
     background: rgba(0, 0, 0, 0.5);
   }
+
+  @media (max-width: 700px) {
+    border: 2px solid white;
+    height: 40px;
+    width: 40px;
+  }
 `;
 
 export class Screenshot extends Component {

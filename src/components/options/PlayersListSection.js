@@ -8,7 +8,6 @@ import formatPosition from "../../utils/formatPosition";
 import { addPlayerToBuildingTeam, unselectSlot } from "./../../actions/team";
 
 const PlayersListSectionComp = styled.div`
-  border-right: 1px solid #0f2d00;
   display: flex;
   flex-direction: column;
   margin-bottom: 0.5rem;
@@ -54,9 +53,8 @@ export class PlayersListSection extends Component {
             key={player.name}
             onClick={() => this.handlePlayerClick(player)}
           >
-            <p>{formatPosition(player.position)}</p>
-
             <p>{formatName(player.name)}</p>
+            <p>{formatPosition(player.position)}</p>
           </Player>
         );
       });

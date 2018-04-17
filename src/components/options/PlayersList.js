@@ -6,13 +6,14 @@ import PlayersListSection from "./PlayersListSection";
 
 import sortPlayers from "../../selectors/sortPlayers";
 
-const PlayersListComp = styled.ul`
-  align-items: flex-end;
+const PlayersListComp = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   list-style-type: none;
-  padding: 0 1rem;
+  margin: 0;
+  padding: 1rem 0;
+  height: 58vh;
 `;
 
 export class PlayersList extends Component {
@@ -37,13 +38,18 @@ export class PlayersList extends Component {
   };
 
   render() {
-    return <PlayersListComp>{this.renderPlayersList()}</PlayersListComp>;
+    return (
+      <PlayersListComp selectedTeam={this.props.selectedTeam}>
+        {this.renderPlayersList()}
+      </PlayersListComp>
+    );
   }
 }
 
 const mapStateToProps = state => ({
   currentTeam: sortPlayers(state.team.currentTeam, state.team.buildingTeam),
-  initialFetching: state.team.loadings.initialFetching
+  initialFetching: state.team.loadings.initialFetching,
+  selectedTeam: !!state.team.currentTeam.name
 });
 
 export default connect(mapStateToProps)(PlayersList);
