@@ -61,11 +61,11 @@ export class PlayerInputsItem extends Component {
         onFocus={() => this.props.selectSlot(this.props.slot)}
         isSelected={this.props.isSelected}
       >
-        <label htmlFor={this.props.slot}>
+        <label htmlFor={`${this.props.slot}-name`}>
           {parseInt(this.props.slot.slice(4, this.props.slot.length)) + 1} :
         </label>
         <input
-          id={this.props.slot}
+          id={`${this.props.slot}-name`}
           autoFocus={this.props.isSelected}
           value={this.props.playerName}
           type="text"
@@ -73,7 +73,7 @@ export class PlayerInputsItem extends Component {
           placeholder="player"
         />
         <input
-          id={this.props.slot}
+          id={`${this.props.slot}-jersey`}
           className="input-jersey"
           autoFocus={this.props.isSelected}
           value={this.props.jerseyNumber}

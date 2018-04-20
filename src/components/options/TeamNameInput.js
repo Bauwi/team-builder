@@ -44,7 +44,7 @@ export class TeamNameInput extends Component {
     console.log(this.props.teamName);
     return (
       <TeamNameInputComp>
-        <label htmlFor="teamp-name-input">TEAM</label>
+        <label htmlFor="team-name-input">TEAM</label>
         <input
           id="team-name-input"
           onChange={this.handleChange}
