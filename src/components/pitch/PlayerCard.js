@@ -14,15 +14,14 @@ const PlayerCardComp = styled.div`
   align-items: center;
   background: #fff;
   border: ${props => (props.isSelected ? "1vw solid #111" : "0px solid white")};
-  border-radius: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  max-width: ${props => (props.isSelected ? "30vw" : "3vw")};
-  min-width: ${props => (props.isSelected ? "30vw" : "3vw")};
-  min-height: ${props => (props.isSelected ? "30vw" : "3vw")};
-  max-height: ${props => (props.isSelected ? "30vw" : "3vw")};
+  max-width: ${props => (props.isSelected ? "20vw" : "3vw")};
+  min-width: ${props => (props.isSelected ? "20vw" : "3vw")};
+  min-height: ${props => (props.isSelected ? "20vw" : "3vw")};
+  max-height: ${props => (props.isSelected ? "20vw" : "3vw")};
 
   opacity: 0.9;
 
@@ -44,7 +43,6 @@ const PlayerCardComp = styled.div`
       props.isFull ? "rgba(0,0,0,.9)" : "rgba(0,0,0,.2)"};
     border: ${props =>
       props.isSelected ? "5px solid #111" : "2px solid white"};
-    border-radius: 50%;
     color: #134e5e;
     cursor: pointer;
     justify-content: center;
@@ -74,7 +72,6 @@ const PlayerCardComp = styled.div`
     background: rgba(255, 0, 0, 1);
     border: ${props =>
       props.isSelected && props.isFull ? "5px solid white" : "0px solid white"};
-    border-radius: 50%;
     box-sizing: content-box;
     color: #111;
     cursor: pointer;
@@ -134,7 +131,7 @@ export class PlayerCard extends Component {
   };
 
   render() {
-    const { isSelected, player } = this.props;
+    const { isSelected, player, jersey } = this.props;
     return (
       <PlayerCardComp isSelected={isSelected} isFull={!!player}>
         <div className="bubble">
@@ -142,17 +139,8 @@ export class PlayerCard extends Component {
             {isSelected ? (
               <img src="images/close.svg" alt="close" />
             ) : (
-              player && (
-                <p className="bubble-toggler-number">{player.jerseyNumber}</p>
-              )
+              player && <p className="bubble-toggler-number">{jersey}</p>
             )}
-          </div>
-
-          <div
-            className="bubble-eraser"
-            onClick={this.handleRemovePlayerFromTeam}
-          >
-            <img src="images/delete.svg" alt="erase" />
           </div>
 
           <div className="bubble-content">
@@ -160,6 +148,7 @@ export class PlayerCard extends Component {
               isFull={!!player}
               isSelected={isSelected}
               player={player}
+              jersey={jersey}
               slot={this.props.slot}
             />
           </div>
@@ -177,6 +166,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const mapStateToProps = (state, ownProps) => ({
-  player: state.team.buildingTeam.slots[ownProps.slot]
+  player: state.team.slots[ownProps.slot].name,
+  jersey: state.team.slots[ownProps.slot].jersey
 });
 export default connect(mapStateToProps, mapDispatchToProps)(PlayerCard);

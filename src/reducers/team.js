@@ -1,98 +1,78 @@
 const teamDefaultState = {
-  division: [],
-  currentTeam: { players: [], name: "" },
-  buildingTeam: {
-    formation: "fourThreeThree",
-    selectedSlot: null,
-    slots: {
-      slot0: null,
-      slot1: null,
-      slot2: null,
-      slot3: null,
-      slot4: null,
-      slot5: null,
-      slot6: null,
-      slot7: null,
-      slot8: null,
-      slot9: null,
-      slot10: null
-    }
-  },
-  loadings: { currentTeam: true }
+  coach: "",
+  name: "",
+  formation: "fourThreeThree",
+  selectedSlot: null,
+  slots: {
+    slot0: { name: "", jersey: "" },
+    slot1: { name: "", jersey: "" },
+    slot2: { name: "", jersey: "" },
+    slot3: { name: "", jersey: "" },
+    slot4: { name: "", jersey: "" },
+    slot5: { name: "", jersey: "" },
+    slot6: { name: "", jersey: "" },
+    slot7: { name: "", jersey: "" },
+    slot8: { name: "", jersey: "" },
+    slot9: { name: "", jersey: "" },
+    slot10: { name: "", jersey: "" }
+  }
 };
 
 export default (state = teamDefaultState, action) => {
   switch (action.type) {
-    case "INITIAL_FETCHING_IS_LOADING":
-      return {
-        ...state,
-        loadings: { ...state.loadings, initialFetching: action.bool }
-      };
-    case "SET_DIVISION":
-      return {
-        ...state,
-        division: action.teams
-      };
-    case "SET_TEAM":
-      return {
-        ...state,
-        currentTeam: { players: action.players, name: action.name }
-      };
-    case "SET_TEAM_IS_FETCHING":
-      return {
-        ...state,
-        loadings: { ...state.loadings, currentTeam: action.bool }
-      };
-    case "RESET_CURRENT_TEAM":
-      return {
-        ...state,
-        currentTeam: teamDefaultState.currentTeam
-      };
-
     case "SELECT_SLOT":
       return {
         ...state,
-        buildingTeam: {
-          ...state.buildingTeam,
-          selectedSlot: action.slot
-        }
+        selectedSlot: action.slot
       };
     case "UNSELECT_SLOT":
       return {
         ...state,
-        buildingTeam: {
-          ...state.buildingTeam,
-          selectedSlot: null
-        }
+        selectedSlot: null
+      };
+    case "SET_TEAM_NAME":
+      return {
+        ...state,
+        name: action.name
+      };
+    case "SET_COACH":
+      return {
+        ...state,
+        coach: action.coach
       };
     case "ADD_PLAYER_TO_BUILDING_TEAM":
       return {
         ...state,
-        buildingTeam: {
-          ...state.buildingTeam,
-          slots: {
-            ...state.buildingTeam.slots,
-            [state.buildingTeam.selectedSlot]: action.player
+        slots: {
+          ...state.slots,
+          [state.selectedSlot]: {
+            ...state.slots[state.selectedSlot],
+            name: action.player
           }
         }
       };
-
+    case "SET_JERSEY_NUMBER":
+      return {
+        ...state,
+        slots: {
+          ...state.slots,
+          [state.selectedSlot]: {
+            ...state.slots[state.selectedSlot],
+            jersey: action.jersey
+          }
+        }
+      };
     case "REMOVE_PLAYER_FROM_BUILDING_TEAM":
       return {
         ...state,
-        buildingTeam: {
-          ...state.buildingTeam,
-          slots: { ...state.buildingTeam.slots, [action.slot]: null }
-        }
+        slots: { ...state.slots, [action.slot]: null }
       };
     case "SELECT_FORMATION":
       return {
         ...state,
-        buildingTeam: {
-          ...state.buildingTeam,
-          formation: action.formation
-        }
+        formation: action.formation
       };
+
     default:
       return state;
   }

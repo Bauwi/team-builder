@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 
 import PitchLine from "./PitchLine";
-import Coach from "./Coach";
+import PitchHeader from "./PitchHeader";
 
 import JSONFormations from "../../utils/formations.json";
 
@@ -25,7 +25,6 @@ const PitchWrapper = styled.section`
     flex: 1;
     max-width: 100%;
     margin: 0;
-    height: 80%;
   }
 `;
 
@@ -47,15 +46,17 @@ export class Pitch extends Component {
   render() {
     return (
       <PitchWrapper id="pitch">
-        <PitchComp>{this.renderFormation(this.props.formation)}</PitchComp>
-        <Coach />
+        <PitchComp>
+          <PitchHeader />
+          {this.renderFormation(this.props.formation)}
+        </PitchComp>
       </PitchWrapper>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  formation: state.team.buildingTeam.formation
+  formation: state.team.formation
 });
 
 export default connect(mapStateToProps)(Pitch);

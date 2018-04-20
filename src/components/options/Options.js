@@ -5,9 +5,12 @@ import styled from "styled-components";
 import { unselectSlot } from "../../actions/team";
 
 import Header from "../Header";
-import TeamPicker from "./TeamPicker";
 import Closer from "../Closer";
 import OptionsStrip from "./OptionsStrip";
+import PlayerInputs from "./PlayerInputs";
+import FormationPicker from "./FormationPicker";
+import TeamNameInput from "./TeamNameInput";
+import CoachInput from "./CoachInput";
 
 const OptionsComp = styled.div`
   display: flex;
@@ -25,8 +28,12 @@ const OptionsComp = styled.div`
 `;
 
 const OptionsContentComp = styled.div`
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   padding: 0 1rem;
+  height: 75vh;  
   @media (max-width: 700px) {
     background: rgba(0, 0, 0, 0.7);
     position: absolute;
@@ -72,8 +79,10 @@ export class Options extends Component {
             <CloserWrapper>
               <Closer onClose={() => this.props.unselectSlot()} />
             </CloserWrapper>
-
-            <TeamPicker />
+            <FormationPicker />
+            <TeamNameInput />
+            <PlayerInputs />
+            <CoachInput />
           </OptionsContentComp>
         </div>
         <OptionsStrip />
@@ -83,7 +92,7 @@ export class Options extends Component {
 }
 
 const mapStateToProps = state => ({
-  aSlotIsSelected: !!state.team.buildingTeam.selectedSlot
+  aSlotIsSelected: !!state.team.selectedSlot
 });
 
 const mapDispatchToProps = dispatch => ({

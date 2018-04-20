@@ -66,7 +66,7 @@ export class Screenshot extends Component {
 }
 
 const mapStateToProps = state => ({
-  teamName: state.team.currentTeam.name
+  teamName: state.team.name
 });
 
 export default connect(mapStateToProps)(Screenshot);

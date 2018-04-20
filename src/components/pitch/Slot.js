@@ -14,7 +14,6 @@ const SlotCompContainer = styled.div`
 
 const SlotComp = styled.div`
   align-items: center;
-  border-radius: 50%;
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -48,6 +47,8 @@ const SlotComp = styled.div`
 
 export class Slot extends Component {
   render() {
+    console.log(this.props.slot);
+
     const { player, isSelected } = this.props;
     return (
       <SlotCompContainer>
@@ -64,8 +65,8 @@ export class Slot extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  isSelected: state.team.buildingTeam.selectedSlot === ownProps.slot,
-  player: state.team.buildingTeam.slots[ownProps.slot]
+  isSelected: state.team.selectedSlot === ownProps.slot,
+  player: state.team.slots[ownProps.slot]
 });
 
 export default connect(mapStateToProps)(Slot);

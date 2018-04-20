@@ -4,33 +4,34 @@ import styled from "styled-components";
 
 const PlayerCardContentContainer = styled.div`
   position: relative;
-  left: -19vw;
+  left: -12.5vw;
+  top: -1rem;
 `;
 const PlayerCardContentComp = styled.div`
   opacity: ${props => (props.isSelected ? "1" : "0")};
   display: flex;
   flex-wrap: wrap;
-  border-radius: 50%;
   color: ${props =>
     props.isSelected ? "#01165C" : "rgba(255, 255, 255, 0.8)"};
-  max-height: ${props => (props.isSelected ? "30vw" : "0")};
-  min-height: ${props => (props.isSelected ? "30vw" : "0")};
-  max-width: ${props => (props.isSelected ? "30vw" : "0")};
-  min-width: ${props => (props.isSelected ? "30vw" : "0")};
+  max-height: ${props => (props.isSelected ? "20vw" : "0")};
+  min-height: ${props => (props.isSelected ? "20vw" : "0")};
+  max-width: ${props => (props.isSelected ? "20vw" : "0")};
+  min-width: ${props => (props.isSelected ? "20vw" : "0")};
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
 
   section {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     color: #111;
     display: flex;
     justify-content: center;
-    min-height: 15vw;
     width: ${props => (props.isSelected ? "100%" : "0")};
   }
   .player-card-bottom {
     display: ${props => (props.isSelected ? "flex" : "none")};
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     p {
       margin: 0;
     }
@@ -39,13 +40,9 @@ const PlayerCardContentComp = styled.div`
     }
   }
   .player-card-top {
-    display: ${props => (props.isSelected ? "flex" : "none")};
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
     h2 {
       color: #111;
-      font-size: 1rem;
+      font-size: 0.9rem;
     }
     p {
       border-bottom: 2px solid #111;
@@ -76,7 +73,7 @@ const PlayerCardContentComp = styled.div`
   }
 `;
 
-export class PlayerCardContent extends Component {
+export default class PlayerCardContent extends Component {
   handleRemovePlayerFromTeam = () => {
     this.props.removePlayerFromBuildingTeam(this.props.slot);
   };
@@ -85,22 +82,13 @@ export class PlayerCardContent extends Component {
     if (!this.props.player) {
       return (
         <PlayerCardContentContainer isFull={this.props.isFull}>
-          <PlayerCardContentComp isSelected={this.props.isSelected}>
-            <section className="player-card-top player-card-top--empty">
-              Pick a player !
-            </section>
-
-            <section className="player-card-bottom">
-              <img src="images/arrow.svg" alt="arrow" />
-            </section>
-          </PlayerCardContentComp>
+          <PlayerCardContentComp isSelected={this.props.isSelected} />
         </PlayerCardContentContainer>
       );
     }
 
-    const { name, jerseyNumber, position, dateOfBirth, nationality } =
-      this.props.player && this.props.player;
-
+    const { player, jersey } = this.props;
+    console.log(player);
     return (
       <PlayerCardContentContainer>
         <PlayerCardContentComp
@@ -108,21 +96,14 @@ export class PlayerCardContent extends Component {
           style={{ marginLeft: "-1vw" }}
         >
           <section className="player-card-top">
-            <p className="jersey-number">{jerseyNumber}</p>
-            <h2>{name.toUpperCase()}</h2>
+            <p className="jersey-number">{jersey}</p>
           </section>
 
           <section className="player-card-bottom">
-            <p>{position}</p>
-            <p>{dateOfBirth}</p>
-            <p>{nationality}</p>
+            <h2>{player}</h2>
           </section>
         </PlayerCardContentComp>
       </PlayerCardContentContainer>
     );
   }
 }
-
-const mapDispatchToProps = dispatch => ({});
-
-export default connect(undefined, mapDispatchToProps)(PlayerCardContent);
