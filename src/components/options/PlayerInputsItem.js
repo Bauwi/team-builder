@@ -62,7 +62,7 @@ export class PlayerInputsItem extends Component {
         isSelected={this.props.isSelected}
       >
         <label htmlFor={`${this.props.slot}-name`}>
-          {parseInt(this.props.slot.slice(4, this.props.slot.length)) + 1} :
+          {parseInt(this.props.slot.slice(4, this.props.slot.length), 10) + 1}
         </label>
         <input
           id={`${this.props.slot}-name`}

@@ -16,11 +16,6 @@ export const setJerseyNumber = jersey => ({
   jersey
 });
 
-export const removePlayerFromBuildingTeam = slot => ({
-  type: "REMOVE_PLAYER_FROM_BUILDING_TEAM",
-  slot
-});
-
 export const selectFormation = formation => ({
   type: "SELECT_FORMATION",
   formation

@@ -62,11 +62,6 @@ export default (state = teamDefaultState, action) => {
           }
         }
       };
-    case "REMOVE_PLAYER_FROM_BUILDING_TEAM":
-      return {
-        ...state,
-        slots: { ...state.slots, [action.slot]: null }
-      };
     case "SELECT_FORMATION":
       return {
         ...state,

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import styled from "styled-components";
 
 const PlayerCardContentContainer = styled.div`
@@ -64,8 +63,8 @@ const PlayerCardContentComp = styled.div`
       margin-top: ${props => (!props.isFull ? "-2rem" : "0")};
     }
     .player-card-bottom {
-      margin: 3rem 0 0 -0.7rem;
-      transform: ${props => !props.isFull && "rotate(-90deg)"};
+      font-size: 0.8rem;
+      margin: 6rem 0 0 -0.7rem;
     }
     .jersey-number {
       display: none;
@@ -74,10 +73,6 @@ const PlayerCardContentComp = styled.div`
 `;
 
 export default class PlayerCardContent extends Component {
-  handleRemovePlayerFromTeam = () => {
-    this.props.removePlayerFromBuildingTeam(this.props.slot);
-  };
-
   render() {
     if (!this.props.player) {
       return (
@@ -88,7 +83,6 @@ export default class PlayerCardContent extends Component {
     }
 
     const { player, jersey } = this.props;
-    console.log(player);
     return (
       <PlayerCardContentContainer>
         <PlayerCardContentComp

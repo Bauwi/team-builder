@@ -27,9 +27,7 @@ const ScreenshotComp = styled.button`
   }
 
   @media (max-width: 700px) {
-    border: 2px solid white;
-    height: 40px;
-    width: 40px;
+    display: none;
   }
 `;
 

@@ -47,8 +47,6 @@ const SlotComp = styled.div`
 
 export class Slot extends Component {
   render() {
-    console.log(this.props.slot);
-
     const { player, isSelected } = this.props;
     return (
       <SlotCompContainer>

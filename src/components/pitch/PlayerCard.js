@@ -4,11 +4,7 @@ import styled from "styled-components";
 
 import PlayerCardContent from "./PlayerCardContent";
 
-import {
-  selectSlot,
-  unselectSlot,
-  removePlayerFromBuildingTeam
-} from "./../../actions/team";
+import { selectSlot, unselectSlot } from "./../../actions/team";
 
 const PlayerCardComp = styled.div`
   align-items: center;
@@ -126,10 +122,6 @@ export class PlayerCard extends Component {
     }
   };
 
-  handleRemovePlayerFromTeam = () => {
-    this.props.removePlayerFromBuildingTeam(this.props.slot);
-  };
-
   render() {
     const { isSelected, player, jersey } = this.props;
     return (
@@ -160,9 +152,7 @@ export class PlayerCard extends Component {
 
 const mapDispatchToProps = dispatch => ({
   selectSlot: slot => dispatch(selectSlot(slot)),
-  unselectSlot: () => dispatch(unselectSlot()),
-  removePlayerFromBuildingTeam: slot =>
-    dispatch(removePlayerFromBuildingTeam(slot))
+  unselectSlot: () => dispatch(unselectSlot())
 });
 
 const mapStateToProps = (state, ownProps) => ({

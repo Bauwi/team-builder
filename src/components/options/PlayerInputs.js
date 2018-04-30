@@ -11,7 +11,6 @@ const PlayerInputsComp = styled.ul`
   margin: 0;
 `;
 
-const TeamInputComp = styled.div``;
 
 export class PlayerInputs extends Component {
   renderInputs = () => {
