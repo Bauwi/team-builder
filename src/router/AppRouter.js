@@ -2,6 +2,7 @@ import React from "react";
 import { Router, Route, Switch } from "react-router-dom";
 import createHistory from "history/createBrowserHistory";
 import HomePage from "../components/HomePage";
+import NotFound from "./../components/NotFound";
 
 // import PrivateRoute from "./PrivateRoute";
 // import PublicRoute from "./PublicRoute";
@@ -17,6 +18,7 @@ const AppRouter = () => (
     <div>
       <Switch>
         <Route path="/" component={HomePage} exact={true} />
+        <Route component={NotFound} />
       </Switch>
     </div>
   </Router>
